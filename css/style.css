@@ -255,7 +255,7 @@ h1 {
     width: 100%;
     max-width: 100vw;
     padding: 0;
-    background-color: #01009a;
+    background-color: #03036d;
 }
 
 /* Logotipo y Play con Video de fondo */
@@ -394,8 +394,7 @@ button.open {
     width: 105%;
     opacity: 0.95;
     z-index: 1;
-    filter: brightness(.5);
-    filter: contrast(1.2);
+    filter: brightness(0.95) contrast(1.1) saturate(0.85) sepia(0.15) hue-rotate(360deg);
 }
 
 
@@ -573,9 +572,14 @@ div.fixed-2 {
 }
 
 .fixed-2 h2 {
-    font-size: 1.2em;
-    line-height: 1;
+    font-size: 2.1em;
+    line-height: 1.05;
     padding-bottom: .1em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-left: 0;
+    margin-inline-start: 0 !important;
+    padding-left: 0.5rem;
 }
 
 .fixed-2 span {
