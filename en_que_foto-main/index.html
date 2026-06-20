@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+    <title>¿en qué foto?</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.ico">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href=ttps://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js />
+    <!-- Aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="home-section">s
+        <header>
+            <div class="home-section-fondo-menu">
+                <nav class="navbar navbar-expand-lg menu-oculto">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img class="logotipo-navbar" src="img/signo.png" alt="Logotipo">
+                        </a>
+                        <button class="btn-menu btn-menu-icon navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                        </button>
+                        <div id="navbarNav" class="collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#galeria">Galería</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#sinopsis-section">Sinopsis</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="contacto.html">Contacto</a>
+                              </li>
+                            </ul>
+                          </div>
+                    </div>
+                </nav>
+                <nav class="d-none d-lg-block" id="botones-menu">
+                    <ul class="list-inline m-0">
+                        <li class="list-inline-item"><a href="#sinopsis-section" class="btn btn-outline-dark btn-menu pointer">Sinopsis</a></li>
+                        <li class="list-inline-item"><a href="#galeria" class="btn btn-outline-dark btn-menu pointer">Galería</a></li>
+                        <li class="list-inline-item"><a href="contacto.html" class="btn btn-outline-dark btn-menu pointer page">Contacto</a></li>
+                    </ul>
+                </nav>   
+            </div>
+            <span id="busca-play" class="d-none d-lg-block">Busca el play oculto</span>
+            <div class="container-fluid">
+                <div class="video-tv-container">
+                    <img id="video-tv" src="img/animacion_volatryx_WEB.gif" alt="Gif animado de Volatryx">
+                    <img id="logotipo" class="help" src="img/Nombre-marca-white.png" alt="Logotipo">
+                    <button onclick="openModal();" aria-label="Open" class="open"><p>Ver spot...</p>
+                        <img src="img/play.png" alt="Play" class="pointer" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="¡Has encontrado el Spot!">
+                    </button>
+                </div>
+                <dialog id="modal1" role="dialog" aria-labelledby="dialogTitle" class="special ">
+                    <div class="x">
+                        <h3 id="dialogTitle">Spot</h3>
+                        <button type="button" onclick="closeModal();" aria-label="Close">X</button>
+                    </div>
+                    <div class="video-container ratio ratio-16x9">
+                        <video id="teaser" class="teaser" controls preload="auto" poster="img/poster-2.png" alt="Teaser Video">
+                            <source src="video/Spot.mp4" type="video/mp4" />
+                            <track src="captions/MyCaptions.es.vtt" kind="captions" srclang="es" label="Spanish" class="track-es">
+                            <track src="captions/MyCaptions.en.vtt" kind="captions" srclang="en" label="English captions" class="track-en">
+                            <p>Your browser does not support the video tag. Download <a href="video/Spot.mp4">video/Spot.mp4</a>.<br>
+                            Su navegador no soporta vídeo HTML5. Este es un <a href="video/Spot.mp4">enlace al vídeo</a> alternativo.</p>
+                        </video>
+                    </div>
+                </dialog>
+            </div>
+            <div class="aviso">
+                <div class="fixed-1 aviso"></div>
+                <div class="fixed-2 aviso">
+                    <div class="sticky">
+                        <div class="row justify-content-between">
+                            <h2 class="col-md-8 ms-3"><a href="#" class="pointer">Sigue los casos en nuestro Instagram: @enquefoto</a></h2>
+                            <button type="button" id="close" class="col-md-1 fixed-close me-3" aria-label="Close">X</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <section id="sinopsis-section" class="d-flex">     
+            <article data-aos="my-fade-up" class="container-lg">
+                <div class="container">
+                    <h3>Sinopsis</h3>
+                    <p>¿En qué foto? es un archivo editorial y documental especializado en fotografía, percepción y narrativas visuales. Dentro de este marco, se desarrollan casos de investigación visual centrados en el siglo XX en España y sus fotografías. Estos casos conforman nuestro archivo editorial y están pensado para la participación colectiva. En el mundo actual, resulta necesario ofrecer nuevas iniciativas que den a conocer la historia de la fotografía de nuestro país.</p>
+                    <a href="#" class="pointer">➔ Descubre más</a>
+                </div>
+            </article>
+            <article class="d-none d-lg-flex" data-aos="my-fade-up" data-aos-delay="200">
+                <img id="gif" class="img-fluid object-fit-cover help" src="img/Presentation-imagen.png" alt="Gif animado de un televisor" onmouseover="pausarGif()" onmouseout="reanudarGif()">
+            </article>
+        </section>
+        <section id="vhs-section">
+            <div class="vhs">
+                <img src="img/vhs-blue-2.png" class="img-fluid" alt="Imagen de una cinta VHS con fondo transparente" data-aos="vhs-animation" data-aos-anchor-placement="top-center">
+                <h5 class="d-none d-sm-block">
+                    <span>Digital | Español | 125 min (piloto) | Documental</span>
+                </h5>
+            </div>
+            <h5 class="d-block d-sm-none descrip">Digital | Español | 125 min (piloto) | Ficción documental
+            </h5>
+            <div class="container intro px-4 justify-content-center">
+                    <div class="row gx-5">
+                        <div class="col-lg-3 col-archi">
+                            <button>Abrir</button>
+                            <img id="archi" class="pb-5 help" src="img/archi.png" alt="Ilustración de un archivo digital">
+                            <img id="archi-2" class="pb-5 help" src="img/archi-2.png" alt="Ilustración de un archivo digital">
+                        </div>
+                        <div class="col-lg-3">
+                            <p id="r-1" class="rev" data-aos="fade-up" data-aos-offset="0" data-aos-duration="1000">- Soy un documental que aún está en proceso, pero pronto saldré a la luz.</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="rev" data-aos="fade-up"  data-aos-delay="2000" data-aos-offset="0" data-aos-duration="1000">- ¿Te apetece participar en mi producción? Participa en el primer caso.</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="rev" data-aos="fade-up"  data-aos-delay="3000" data-aos-offset="0" data-aos-duration="1000">- No prometo que resolver todas tus dudas, pero sí ofrecerte una nueva mirada.</p>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="narrativas-section">
+            <article class="section-inner">
+                <h1>Narrativas visuales</h1>
+            </article>
+            <article class="section-inner section-inner-2">
+                    <h3 class="situ situ-2 pt-3 mx-3 pe-1">Deja tu comentario: <a href="#" class="pointer">#puedesreconocerla</a></h3></div>
+                    <div id="carouselReviews" class="container carousel slide" data-aos="my-fade-up">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active card a1">
+                                <div class="row card-body slide-carousel">
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="card h-100">
+                                            <div class="card-body slide">
+                                                <h5 class="card-title mt-1 es4">Nagrieta</h5>
+                                                <p class="card-text">Narrativa que se forma a partir de una fisura entre lo mostrado y ocultado. La imagen es una especie de trampa visual. Puede sugerir historias inquietantes.</p>
+                                                <div class="accordion d-block d-sm-none" id="accordion1">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" data-bs-toggle="collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                                Leer más
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseOne" class="collapse" data-bs-parent="#accordion1">
+                                                            <div class="accordion-body">
+                                                            <strong>Narrativa que se forma a partir de una fisura</strong> entre lo mostrado y ocultado. La imagen es una especie de trampa visual. Puede sugerir historias inquietantes.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-md-flex justify-content-center">
+                                                <img class="estrellas" src="img/5-estrellas-blanco.png" alt="4 estrellas">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 d-block d-sm-none d-lg-block">
+                                        <div class="card h-100">
+                                            <div class="card-body slide">
+                                                <h5 class="card-title mt-1 es5">Instopía</h5>
+                                                <p class="card-text">Narrativa utópica o distópica comprimida en una sola escena. Sugiere un futuro posible o un mundo alternativo. La realidad se percibe alterada.</p>
+                                                <div class="accordion d-block d-sm-none" id="accordion2">
+                                                    <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            Leer más
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                                                        <div class="accordion-body">
+                                                        <strong>Narrativa utópica o distópica comprimida en una sola escena.</strong> Sugiere un futuro posible o un mundo alternativo. La realidad se percibe alterada.
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-md-flex justify-content-center">
+                                                <img class="estrellas" src="img/5-estrellas-blanco.png" alt="4 estrellas">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title mt-1 es5">Estalada</h5>
+                                                <p class="card-text">Narrativa detenida, contenida en un instante congelado, donde lo que ocurrió antes o después se sugiere sin ser mostrado. Todo parece quedar en suspensión.</p>
+                                                <div class="accordion d-block d-sm-none" id="accordion3">
+                                                    <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                            Leer más
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                                                        <div class="accordion-body">
+                                                        <strong>Narrativa detenida, contenida en un instante congelado,</strong> donde lo que ocurrió antes o después se sugiere sin ser mostrado. Todo parece quedar en suspensión.
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-md-flex justify-content-center">
+                                                <img class="estrellas" src="img/5-estrellas-blanco.png" alt="4 estrellas">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item card a1">
+                                <div class="row card-body slide-carousel">
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="card h-100">
+                                            <div class="card-body slide">
+                                                <h5 class="card-title mt-1 es4">Mafábula</h5>
+                                                <p class="card-text">Narrativa fotográfica con tono mitológico o simbólico donde las imágenes parecen contar un cuento visual. Habla desde un sentimiento.</p>
+                                                <div class="accordion d-block d-sm-none" id="accordion4">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" data-bs-toggle="collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                                Leer más
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseFour" class="collapse" data-bs-parent="#accordion4">
+                                                            <div class="accordion-body">
+                                                            <strong>Narrativa fotográfica con tono mitológico o simbólico</strong> donde las imágenes parecen contar un cuento visual. Habla desde un sentimiento.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-md-flex justify-content-center">
+                                                <img class="estrellas" src="img/5-estrellas-blanco.png" alt="4 estrellas">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 d-block d-sm-none d-lg-block">
+                                        <div class="card h-100">
+                                            <div class="card-body slide">
+                                                <h5 class="card-title mt-1 es5">Multivilis</h5>
+                                                <p class="card-text">Conjunto de posibles interpretaciones narrativas que emergen de una imagen ambigua. Surgen innumerables preguntas al mirarla.</p>
+                                                <div class="accordion d-block d-sm-none" id="accordion5">
+                                                    <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                            Leer más
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                                                        <div class="accordion-body">
+                                                        <strong>Conjunto de posibles interpretaciones narrativas</strong> que emergen de una imagen ambigua. Surgen innumerables preguntas al mirarla.
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-md-flex justify-content-center">
+                                                <img class="estrellas" src="img/5-estrellas-blanco.png" alt="4 estrellas">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title mt-1 es5">Visiorama</h5>
+                                                <p class="card-text">Narrativa visual que despliega múltiples acciones simultáneas en una sola imagen. El espectador puede vagar por la imagen como quien recorre un mapa.</p>
+                                                <div class="accordion d-block d-sm-none" id="accordion6">
+                                                    <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                                            Leer más
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordion6">
+                                                        <div class="accordion-body">
+                                                        <strong>Narrativa visual que despliega múltiples acciones simultáneas</strong> en una sola imagen. El espectador puede vagar por la imagen como quien recorre un mapa.
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-md-flex justify-content-center">
+                                                <img class="estrellas" src="img/5-estrellas-blanco.png" alt="4 estrellas">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselReviews" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselReviews" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+            </article>
+            
+        </section>
+        <section id="video-section">
+            <div class="fondo-2"></div>
+            <article class="section-inner dark">
+                <h1 class="dark">Videos</h1>
+                <p class="px-4 mt-3 comentario">Siguenos: @enquefoto</p>
+                <div class="coleccion-horizontal pe-5">
+                    <div class="video-s d-block d-lg-flex align-items-end">
+                            <div class="v position-relative" id="v1">
+                                <video id="video1" class="bg-video position-absolute w-100 h-100 top-0 start-0 videos" autoplay muted loop>
+                                    <!-- <source src="video/medu-a.mp4" type="video/mp4"> -->
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="v-2 d-flex justify-content-center align-items-center">
+                                    <button class="i-z fullPlay">Play ▶</button>
+                                    <div class="i-v i-z position-absolute">
+                                        <div class=" d-flex">
+                                            <h3>01</h3>
+                                            <div>
+                                                <h2>Origen</h2>
+                                                <h2><i>1:32 min</i></h2>
+                                            </div>
+                                        </div>   
+                                    </div>
+                                    <div class="cover position-absolute"></div>
+                                </div>
+                            </div>
+                            <div class="v position-relative" id="v2">
+                                <video class="bg-video position-absolute w-100 h-100 top-0 start-0 videos" autoplay muted loop>
+                                    <!-- <source src="video/medu-b.mp4" type="video/mp4"> -->
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="v-2 d-flex justify-content-center align-items-center">
+                                    <button class="i-z fullPlay">Play ▶</button>
+                                    <div class="i-v i-z position-absolute">
+                                        <div class=" d-flex">
+                                            <h3>02</h3>
+                                            <div>
+                                                <h2>Propósito</h2>
+                                                <h2><i>1:02 min</i></h2>
+                                            </div>
+                                        </div>   
+                                    </div>
+                                    <div class="cover position-absolute"></div>
+                                </div>
+                            </div>
+                            <div class="v position-relative" id="v3">
+                                <video class="bg-video position-absolute w-100 h-100 top-0 start-0 videos" autoplay muted loop>
+                                    <!-- <source src="video/medu-c.mp4" type="video/mp4"> -->
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="v-2 d-flex justify-content-center align-items-center">
+                                    <button class="i-z fullPlay">Play ▶</button>
+                                    <div class="i-v i-z position-absolute">
+                                        <div class=" d-flex">
+                                            <h3>03</h3>
+                                            <div>
+                                                <h2>Variaciones</h2>
+                                                <h2><i>1:52 min</i></h2>
+                                            </div>
+                                        </div>   
+                                    </div>
+                                 <div class="cover position-absolute"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+        </section>
+
+        <section id="extra-section">
+            <article class="section-inner">
+                <h1>Extras</h1>
+                <div class="container character">
+                    <div class="row align-items-center justify-content-center g-0">
+                      <div class="col-10 col-md-4">
+                        <div class="card" data-aos="my-fade-up">
+                            <img src="img/Texturas_aplicacion_poster_A1.jpg" class="card-img-top" alt="character 1">
+                            <div class="card-overlay"><p>¿Puedes reconocerla?</p></div>
+                            <div class="card-body">
+                                <h5>Estalada</h5>
+                                <p class="card-text">Narrativa visual 02. <a href="#" class="pointer">Saber más</a></p>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-10 col-md-4">
+                        <div class="card" data-aos="my-fade-up" data-aos-delay="300">
+                            <img src="img/Texturas_aplicacion_poster_A2.jpg" class="card-img-top" alt="character 2">
+                            <div class="card-overlay"><p>¿Y esta otra?</p></div>
+                            <div class="card-body">
+                                <h5>Instopía</h5>
+                                <p class="card-text">Narrativa visual 07. <a href="#" class="pointer">Saber más</a></p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="galeria">
+        <article class="section-inner dark position-relative">
+            <h1 class="dark">Galería</h1>
+            <div class="d-block d-sm-flex justify-content-between align-items-center">
+                <p class="mt-3 mx-3 mb-0 comentario">Deja tu comentario: #fotoinicios</p>
+                <button id="postalButton" class="mx-3 mt-3">🡦 Voltear postales</button>
+            </div>
+            <div id="pixi-container" class="pointer"></div>
+        </article>
+        </section>
+    </main>
+
+    <footer class="d-flex align-items-end">
+        <div class="container d-block concon">
+            <p class="pointer idiomas"><a href="#" class="pointer">Es</a> <a href="#" class="pointer">En</a> <a href="#" class="pointer">Pt</a> <a href="" class="pointer">Fr</a> <a href="#">It</a></P>
+            <div class="container d-block">
+                <div class="row justify-content-between g-3 mb-3">
+                    <div class="col-sm-6 col-md-4 d-flex flex-column">
+                        <a href="#" class="pointer">Créditos</a>
+                        <a href="#" class="pointer">Políticas de privacidad</a>
+                        <a href="#" class="pointer">Gestionar preferencias</a>
+                        <a href="#" class="pointer">Términos y condiciones de uso</a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 d-flex flex-column">
+                        <button class="btn btn-outline-dark pointer">Contacto</button>
+                        <button class="btn btn-outline-dark pointer">Prensa</button>
+                        <button class="btn btn-outline-dark pointer">Donaciones</button>
+                    </div>
+                    <div class="col-sm-6 col-md-4 d-flex flex-column">
+                        <p>Redes Sociales</p>
+                        <a href="#" class="pointer">Facebook</a>
+                        <a href="#" class="pointer">Instagram</a>
+                        <a href="#" class="pointer">Youtube</a>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-outline-dark pointer faq">FAQ</button>
+            <div class="d-block d-sm-flex justify-content-end px-1 nombre">
+                <a href="#" class="pointer pe-5">Inicio</a>
+                <p class="pointer"><span>&copy;</span> 2025 ¿En qué foto?</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- My .js -->
+    <script src="js/script.js"></script>
+
+    <!-- Lenis.js -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- Gsap y ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline();
+            tl.to("#v1", { height: "55vh" })
+            .to("#v2", { height: "55vh" })
+            .to("#v3", { height: "55vh" });
+
+            ScrollTrigger.matchMedia({
+            "(min-width: 992px)": function () {
+                gsap.utils.toArray(".video-s").forEach((el, index) => {
+                    ScrollTrigger.create({
+                        animation: tl,
+                        trigger: ".fondo-2",
+                        start: "top 80%",
+                        once: true,
+                        // scrub: true,
+                        id: "v",
+                        ease: "none",
+                        // markers: true,
+                    });
+                });
+            },
+
+            "(max-width: 991px)": function () {
+                const trigger = ScrollTrigger.getById("v");
+                if (trigger) trigger.kill();
+                }
+            });
+        });
+    </script>
+
+    <!-- PiziJS - Sección galería -->
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
+
+    <script>
+        (async () => {
+            const app = new PIXI.Application({
+                resizeTo: window,
+                backgroundColor: 0x1E1EFF
+            });
+
+            document.getElementById("pixi-container").appendChild(app.view);
+
+        const currentFotoUrl = [
+            "img/foto-6.png",
+            "img/foto-7.png",
+            "img/foto-8.png",
+            "img/foto-9.png",
+            "img/foto-10.png"
+        ];
+
+        const newFotoUrl = [
+            "img/foto-1.png",
+            "img/foto-2.png",
+            "img/foto-3.png",
+            "img/foto-4.png",
+            "img/foto-5.png"
+        ];
+
+        const textures = await Promise.all(currentFotoUrl.map(url => PIXI.Assets.load(url)));
+
+        textures.forEach(texture => {
+            texture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
+        });
+
+        const photos = textures.map((texture, index) => {
+            return createPhoto(
+                texture,
+                Math.floor(Math.random() * app.screen.width),
+                Math.floor(Math.random() * app.screen.height),
+                index
+            );
+        });
+
+        function createPhoto(texture, x, y, index) {
+            const photo = new PIXI.Sprite(texture);
+            photo.eventMode = "static";
+            photo.cursor = "pointer";
+            photo.anchor.set(0.5);
+            photo.scale.set(giveScale()); 
+            photo.on("pointerdown", onDragStart, photo);
+            photo.x = x;
+            photo.y = y;
+            app.stage.addChild(photo);
+            return photo;
+        }
+
+        function giveScale() {
+                const screenWidth = window.innerWidth;
+                if (screenWidth <= 576) {
+                    return 0.1;
+                } else if (screenWidth <= 992) {
+                    return 0.2;
+                } else {
+                    return 0.3;
+                }
+            }
+
+        let dragTarget = null;
+
+        app.stage.eventMode = "static";
+        app.stage.hitArea = app.screen;
+        app.stage.on("pointerup", onDragEnd);
+        app.stage.on("pointerupoutside", onDragEnd);
+
+        function onDragMove(event) {
+            if (dragTarget) {
+                dragTarget.parent.toLocal(event.global, null, dragTarget.position);
+            }
+        }
+
+        function onDragStart() {
+            this.alpha = 0.5;
+            dragTarget = this;
+            app.stage.on("pointermove", onDragMove);
+        }
+
+        function onDragEnd() {
+            if (dragTarget) {
+                app.stage.off("pointermove", onDragMove);
+                dragTarget.alpha = 1;
+                dragTarget = null;
+            }
+        }
+
+        document.getElementById("postalButton").addEventListener("click", async () => {
+
+            const newTextures = await Promise.all(newFotoUrl.map(url => PIXI.Assets.load(url)));
+
+            newTextures.forEach(texture => {
+                texture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
+            });
+
+            photos.forEach((photo, index) => {
+                photo.texture = newTextures[index];
+            });
+        });
+
+        window.addEventListener("resize", () => {
+            photos.forEach(photo => {
+                photo.scale.set(giveScale());
+                photo.x = Math.floor(Math.random() * app.screen.width);
+                photo.y = Math.floor(Math.random() * app.screen.height);
+            });
+        });
+    })();
+    </script>
+    
+    <!-- jquery -->
+    <script>
+        // botón de archivo
+        $( "button" ).on( "click", function() {
+            $( "#archi-2" ).fadeToggle( "slow", "linear" );
+        } );
+
+        // transición entre páginas
+        $(document).ready(function() {
+  
+            $("body").css("visibility", "visible").hide().fadeIn(2000);
+            
+            $("a.page").click(function(event){
+            event.preventDefault();
+            var changePage = $(this).attr("href");
+            $("body").fadeOut("slow", function() {
+                window.location.href = changePage;
+            });
+        });
+     });
+    </script>
+
+</body>
+</html>
