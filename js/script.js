@@ -67,22 +67,6 @@ fixed2.addEventListener("mouseout", function() {
   fixed1.classList.remove("hover-opacity-1");
 });
 
-// Subtítulos
-
-// let videos = document.querySelectorAll(".teaser");
-// videos.forEach(video => {
-
-//     let track = video.addTextTrack("subtitles", "Subtitles", "en");
-//     track.mode = "showing";
-//     track.addCue(new VTTCue(0.2, 2.8, "In a world where everything is visible..."));
-//     track.addCue(new VTTCue(3.2, 7, "Some stories remain hidden, on the verge of extinction."));
-//     track.addCue(new VTTCue(8, 11.2, "Stories that hide right before our eyes."));
-//     track.addCue(new VTTCue(13, 14.6, "<b>Y¿Delet.exe</b>"));
-//     track.addCue(new VTTCue(16, 17.9, "<b>Do you want to run it?</b>"));
-
-// console.log(track.cues);
-// });
-
 // Video de la ventana modal
 
 const modal = document.getElementById("modal1");
@@ -138,20 +122,6 @@ AOS.init({
   once: true,
   delay: 200,
 });
-
-// Gif animado
-
-const gif = document.getElementById("gif");
-const gifMove = "img/tv-animacion.gif";
-const gifStatic = "img/tv-animacion.png";
-
-function pausarGif() {
-    gif.src = gifStatic;
-}
-
-function reanudarGif() {
-    gif.src = gifMove;
-}
 
 // Seguimiento del mouse
 
@@ -243,73 +213,4 @@ $(document).ready(function() {
   });
 });
 
-
-// Reproducir video en pantalla completa
-
-$(document).ready(function() {
-    var playButton = $(".fullPlay");
-    var video = $(".videos");
-
-    function enterFullscreen() {
-        if (video[0].requestFullscreen) {
-            video[0].requestFullscreen();
-        } else if (video[0].webkitRequestFullscreen) {
-            video[0].webkitRequestFullscreen();
-        }
-    }
-
-    playButton.on("click", function() {
-      if (video[0].paused) {
-          video[0].play();
-          enterFullscreen();
-      } else {
-          video[0].pause();
-      }
-  });
-});
-
-// Calendario entradas
-$(document).ready(function(){
-  // Set the default date to the current date
-  var today = new Date();
-  var day = String(today.getDate()).padStart(2, '0');
-  var month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
-  var year = today.getFullYear();
-  var formattedDate = day + '/' + month + '/' + year;
-  $('#date').val(formattedDate);
-
-  $('#date').datepicker({
-      format: 'dd/mm/yyyy',
-      startDate: '-3d',
-      autoclose: true
-  });
-});
-
-// Payment Modal
-document.querySelectorAll('.obtener-entrada').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default behavior of the <a> tag
-        console.log('Button clicked'); // Add this line to check if the event is triggered
-        var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-        confirmationModal.show();
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("contactForm");
-    const feedbackModal = new bootstrap.Modal(document.getElementById("feedbackModal"));
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        const formData = new FormData(form);
-
-        // Simulate form submission for demonstration purposes
-        setTimeout(() => {
-            feedbackModal.show();
-            form.reset(); // Reset the form fields
-        }, 1000);
-
-    });
-});
 });
