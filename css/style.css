@@ -23,6 +23,8 @@
     --font-details: "Courier Prime", monospace; 
     --font-mono: "Courier Prime", monospace; 
     --font-btn-link: "Montserrat", sans-serif; 
+    --subtitle-size: 1.75rem;
+    --subtitle-weight: 400;
 }
 
 
@@ -813,7 +815,7 @@ div.fixed-2 {
 
 .situ {
     font-family: var(--font-mono);
-    font-size: 1em;
+    font-size: 1.4rem;
     font-weight: 400;
 }
 
@@ -1031,8 +1033,24 @@ div.fixed-2 {
 }
 
 .comentario {
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-family: var(--font-body);
+}
+
+.subtitle-lg {
+    font-size: var(--subtitle-size);
+    font-weight: var(--subtitle-weight);
+    line-height: 1.1;
+}
+
+/* Unify subtitle sizing across common subtitle classes */
+.comentario,
+.situ,
+.situ-2,
+.descrip {
+    font-size: var(--subtitle-size);
+    font-weight: var(--subtitle-weight);
+    line-height: 1.1;
 }
 
 .coleccion-horizontal {
@@ -1710,6 +1728,7 @@ footer .row .btn {
     .situ-2 {
         margin-top: .5em !important;
         margin-bottom: 1.5em;
+        font-size: 1.6rem;
     }
 
     #carouselReviews .card {
@@ -1805,7 +1824,7 @@ footer .row .btn {
     }
 
     .comentario {
-        font-size: .9em;
+        font-size: 1.15em;
     }
    
     #galeria button {
