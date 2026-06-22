@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kosugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -18,7 +18,7 @@
     --black: #252525; 
 
     /* Tipografías */
-    --font-title: "DotGothic16", sans-serif;
+    --font-title: "Cofo Sans", sans-serif;
     --font-body: "Montserrat", sans-serif; 
     --font-details: "Courier Prime", monospace; 
     --font-mono: "Courier Prime", monospace; 

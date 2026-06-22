@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kosugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -18,7 +18,7 @@
     --black: #252525; 
 
     /* Tipografías */
-    --font-title: "DotGothic16", sans-serif;
+    --font-title: "Cofo Sans", sans-serif;
     --font-body: "Montserrat", sans-serif; 
     --font-details: "Courier Prime", monospace; 
     --font-mono: "Courier Prime", monospace; 
@@ -1203,6 +1203,82 @@ h1.dark {
 
 .character .row {
     gap: 20px;
+}
+
+/* Restaurar comportamiento de bloque para el contenedor específico de .character
+   para evitar conflictos con el grid de Bootstrap que provocan overflow */
+.container.character {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Forzar que las tarjetas dentro de .character tengan la misma altura
+   y que las imágenes se recorten para mantener proporciones coherentes */
+.character .row {
+    gap: 20px;
+    align-items: stretch;
+}
+
+.character .col-10,
+.character .col-md-4 {
+    display: flex;
+}
+
+.character .col-10 > .card,
+.character .col-md-4 > .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Imagenes: tamaño base móvil, luego más grandes en pantallas mayores */
+.character .card-img-top {
+    width: 100%;
+    height: 180px; /* móvil/pequeñas */
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16/10;
+}
+
+.character .card-body {
+    flex: 1 1 auto;
+}
+
+@media (min-width: 768px) {
+    .character .card-img-top {
+        height: 300px; /* tablet/desktop pequeño */
+        aspect-ratio: 16/9;
+    }
+}
+
+@media (min-width: 1200px) {
+    .character .card-img-top {
+        height: 380px; /* escritorio grande */
+    }
+    /* asegurar que las columnas se estiren uniformemente */
+    .character .col-md-4 {
+        display: flex;
+    }
+}
+
+/* Centrar tarjetas en pantallas móviles */
+@media (max-width: 767.98px) {
+    .character .row {
+        justify-content: center;
+    }
+    .character .col-10 {
+        max-width: 480px; /* limita el ancho de la columna móvil para centrar visualmente */
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    .character .col-10 > .card {
+        width: 100%;
+    }
 }
 
 .character .card a {
