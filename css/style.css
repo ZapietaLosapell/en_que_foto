@@ -399,10 +399,10 @@ button.open {
 
 .hero-text {
     position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 25%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    text-align: left;
     z-index: 10;
     width: 80vw;
     max-width: 80vw;
@@ -412,7 +412,7 @@ button.open {
 .hero-text h1 {
     font-family: "Courier New", Courier, monospace;
     font-weight: 400;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-size: clamp(2.8rem, 5.5vw, 4.2rem);
     color: var(--background-color);
     line-height: 1.05;
     margin: 0 0 0.5rem;
@@ -425,15 +425,15 @@ button.open {
 
 .hero-subtitle {
     font-family: var(--font-body);
-    font-weight: 400;
+    font-weight: 500;
     font-size: clamp(1.9rem, 2.4vw, 2.8rem);
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.35;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     width: 100%;
     max-width: 100%;
-    letter-spacing: 0.005em;
+    letter-spacing: -0,003em;
 }
 
 .fixed-2 .sticky h2 {
