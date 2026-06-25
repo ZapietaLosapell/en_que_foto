@@ -257,7 +257,7 @@ h1 {
     width: 100%;
     max-width: 100vw;
     padding: 0;
-    background-color: #03036d;
+    background-color: #060196;
 }
 
 /* Logotipo y Play con Video de fondo */
@@ -301,13 +301,18 @@ h1 {
     background: none;
     border: none;
     position: absolute;
-    z-index: 2;
-    width: 5%;
-    font-size: 3rem;
+    left: 50%;
+    top: 62%;
+    transform: translateX(-50%);
+    z-index: 200;
+    width: auto;
+    padding: 0.75rem 1rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
     font-family: var(--font-details);
-    display: flex;
+    display: inline-flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* Play en pantalla pequeña */
@@ -385,10 +390,55 @@ button.open {
 /* Video de fondo */
 
 .video-tv-container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    width: 80vw;
+    max-width: 80vw;
+    padding: 0;
+}
+
+.hero-text h1 {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: var(--background-color);
+    line-height: 1.05;
+    margin: 0 0 0.5rem;
+    padding: 0;
+    text-transform: none;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 2.4vw, 2.8rem);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.35;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    letter-spacing: 0.005em;
+}
+
+.fixed-2 .sticky h2 {
+    font-size: clamp(1.4rem, 1.8vw, 2rem);
+    letter-spacing: 0.003em;
 }
 
 #video-tv {
@@ -396,7 +446,6 @@ button.open {
     width: 105%;
     opacity: 0.95;
     z-index: 1;
-    filter: brightness(0.95) contrast(1.1) saturate(0.85) sepia(0.15) hue-rotate(360deg);
 }
 
 
@@ -558,7 +607,7 @@ div.fixed-2 {
     color: var(--background-color);
     transition: background-color .8s;
     font-size: 1.5em;
-    font-family: var(--font-title);
+    font-family: var(--font-body);
     margin-top: .1em;
 }
 
@@ -571,6 +620,7 @@ div.fixed-2 {
     margin: 1.5rem 0;
     text-align: right;
     padding-right: 1em;
+    letter-spacing: 0em;
 }
 
 .fixed-2 h2 {
@@ -578,7 +628,7 @@ div.fixed-2 {
     line-height: 1.05;
     padding-bottom: .1em;
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: 0em;
     margin-left: 0;
     margin-inline-start: 0 !important;
     padding-left: 0.5rem;
@@ -594,10 +644,10 @@ div.fixed-2 {
 }
 
 .fixed-2 a {
-    font-family: var(--font-title);
+    font-family: var(--font-body);
     color: var(--background-color);
     transition: color .5s;
-    letter-spacing: -.04em;
+    letter-spacing: 0em;
     font-weight: 500;
     padding-left: 1em;
 }
@@ -814,7 +864,7 @@ div.fixed-2 {
 }
 
 .situ {
-    font-family: var(--font-mono);
+    font-family: var(--font-body);
     font-size: 1.4rem;
     font-weight: 400;
 }
@@ -929,10 +979,10 @@ div.fixed-2 {
 }
 
 #carouselReviews .card p {
-    font-family: var(--font-title);
+    font-family: var(--font-body);
     font-weight: 400;
     transition: opacity 500ms, transform 500ms, height 500ms;
-    font-size: 1em;
+    font-size: 1.15em;
 }
 
 .card-body.slide-carousel {
@@ -1035,6 +1085,10 @@ div.fixed-2 {
 .comentario {
     font-size: 1.15rem;
     font-family: var(--font-body);
+}
+
+#galeria .comentario {
+    padding-bottom: 1.1rem;
 }
 
 .subtitle-lg {
@@ -1317,20 +1371,35 @@ h1.dark {
 /* GALERIA SECTION */
 
 #galeria{
-    height: 145vh;
+    height: auto;
     overflow: hidden;
     background-color: var(--primary-color);
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#galeria .section-inner {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 #pixi-container {
     width: 100%;
-    height: 145vh;
+    height: auto;
+    min-height: 60vh;
     position: relative;
     overflow: hidden;
 }
 
+#pixi-container canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 #postalButton {
     position: relative;
+    z-index: 1000;
     background-color: var(--primary-color);
     border: none;
     color: var(--background-color);
@@ -1566,9 +1635,31 @@ footer .row .btn {
         height: auto;
     }
 
+    .hero-text {
+        top: 45%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.7rem, 2vw, 2.2rem);
+    }
+
+    .open,
     .open img {
-        opacity: 1;
-        transform: scale(0.98);
+        display: none !important;
+        opacity: 0 !important;
+        transform: none !important;
+    }
+
+    #galeria {
+        height: auto !important;
+    }
+
+    #pixi-container {
+        height: 65vh !important;
     }
 
     #logotipo {
@@ -1579,6 +1670,10 @@ footer .row .btn {
     .btn-menu { 
         font-size: 2em;
         margin-top: 0.5em;
+    }
+
+    #postalButton {
+        margin-bottom: .8em;
     }
 }
 
@@ -1720,9 +1815,9 @@ footer .row .btn {
     h1 {
         padding-left: .5rem;
         font-size: 2.8rem;
-        letter-spacing: .15em;
-        padding-top: .2em;
-        padding-bottom: .3em;
+        letter-spacing: 0;
+        padding-top: .7rem;
+        padding-bottom: .1em;
         text-transform: uppercase;
         font-family: var(--font-title);
         text-align: center;
@@ -1732,6 +1827,10 @@ footer .row .btn {
         margin-bottom: 1.2rem;
         margin-top: .5rem;
         padding-bottom: 0;
+    }
+
+    article h1 {
+        letter-spacing: 0;
     }
 
     .navbar-nav {
@@ -1748,18 +1847,58 @@ footer .row .btn {
     }
 
     #sinopsis-section article:first-child {
-        padding: 0 1rem;
+        padding: 1.2rem 1rem 1.5rem;
     }
 
     #sinopsis-section p {
-        line-height: 116%;
+        line-height: 140%;
         letter-spacing: 0;
         font-weight: 400;
+        font-size: 1.1rem;
     }
 
-    #sinopsis-section h3, #sinopsis-section a {
-        font-size: .9em;
-        letter-spacing: .02em;
+    #sinopsis-section h3 {
+        font-size: 1.6rem;
+        letter-spacing: 0;
+        margin-bottom: .8rem;
+    }
+
+    #sinopsis-section a {
+        font-size: 1.25rem;
+        letter-spacing: 0;
+    }
+
+    .open {
+        display: none !important;
+    }
+
+    .open img {
+        display: none !important;
+    }
+
+    .hero-text {
+        top: 45%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.15;
+        max-width: 90vw;
+        white-space: normal;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem !important;
+        line-height: 1.3;
+        max-width: 90vw;
+    }
+
+    #galeria {
+        height: auto !important;
+    }
+
+    #pixi-container {
+        height: 70vh !important;
     }
 
     .card-body.slide-carousel img {

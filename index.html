@@ -66,14 +66,17 @@
             <div class="container-fluid">
                 <div class="video-tv-container">
                     <img id="video-tv" src="img/animacion_volatryx_WEB.gif" alt="Gif animado de Volatryx">
-                    <img id="logotipo" class="help" src="img/Nombre-marca-white.png" alt="Logotipo">
-                    <button onclick="openModal();" aria-label="Open" class="open"><p>Ver spot...</p>
-                        <img src="img/play.png" alt="Play" class="pointer" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="¡Has encontrado el Spot!">
+                    <div class="hero-text">
+                        <h1>¿En qué foto?</h1>
+                        <p class="hero-subtitle">Cada imagen es más de lo que muestra. Investiga historias a partir de fotografías y archivos. Participa en documentales construidos colectivamente.</p>
+                    </div>
+                    <button onclick="openModal();" aria-label="Open" class="open"><p>Ver teaser...</p>
+                        <img src="img/play.png" alt="Play" class="pointer" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="¡Has encontrado el Teaser!">
                     </button>
                 </div>
                 <dialog id="modal1" role="dialog" aria-labelledby="dialogTitle" class="special ">
                     <div class="x">
-                        <h3 id="dialogTitle">Spot</h3>
+                        <h3 id="dialogTitle">Teaser</h3>
                         <button type="button" onclick="closeModal();" aria-label="Close">X</button>
                     </div>
                     <div class="video-container ratio ratio-16x9">
@@ -572,9 +575,13 @@
                 if (screenWidth <= 576) {
                     return 0.1;
                 } else if (screenWidth <= 992) {
-                    return 0.2;
+                    return 0.16;
+                } else if (screenWidth <= 1200) {
+                    return 0.19;
+                } else if (screenWidth <= 1340) {
+                    return 0.25;
                 } else {
-                    return 0.3;
+                    return 0.29;
                 }
             }
 
