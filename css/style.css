@@ -51,9 +51,9 @@ a:hover {
 
 h1 {
     font-family: var(--font-body);
-    font-size: clamp(5rem, 12vw, 10rem);
+    font-size: clamp(3rem, 8vw, 6rem);
     color: var(--primary-color);
-    letter-spacing: -.035em;
+    letter-spacing: -.04em;
     margin: 0;
     padding-left: 0.1em;
     line-height: 1;
