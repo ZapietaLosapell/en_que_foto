@@ -32,16 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Tooltip
-
-const tooltipTriggerEl = document.querySelector('[data-bs-toggle="tooltip"]');
-const tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
-
-document.body.addEventListener("mousemove", (e) => {
-  if (tooltipTriggerEl.contains(e.target) === false) {
-    tooltip.hide();
-  }
-});
 
 // Aviso
 
@@ -66,26 +56,6 @@ fixed2.addEventListener("mouseover", function() {
 fixed2.addEventListener("mouseout", function() {
   fixed1.classList.remove("hover-opacity-1");
 });
-
-// Video de la ventana modal
-
-const modal = document.getElementById("modal1");
-const video = document.getElementById("teaser");
-
-modal.addEventListener("close", function() {
-  tooltip.hide();
-});
-
-window.openModal = function() {
-    modal.showModal();
-    document.body.classList.add("scroll");
-};
-
-window.closeModal = function() {
-    modal.close();
-    video.pause();
-    document.body.classList.remove("scroll");
-};
 
 // Cierre del menu
 
@@ -123,94 +93,35 @@ AOS.init({
   delay: 200,
 });
 
-// Seguimiento del mouse
-
-const lookFor = document.querySelector("#busca-play");
-const targetVideo = document.querySelector("header");
-const offsetX = 90, offsetY = -45;
-let shown = false; 
-
-targetVideo.addEventListener("mouseenter", () => {
-  if (shown === false) {
-    lookFor.style.display = "block";
-    lookFor.style.opacity = 1;
-    shown = true;
-  }
-});
-
-targetVideo.addEventListener("mouseleave", () => {
-  lookFor.style.opacity = 0;
-    setTimeout(() => {
-    lookFor.style.display = "none";
-    }, 300);
-});
-
-targetVideo.addEventListener("mousemove", e => {
-  const posicionX = e.clientX + offsetX;
-  const posicionY = e.clientY + offsetY;
-  lookFor.style.left = `${posicionX}px`;
-  lookFor.style.top = `${posicionY}px`;
-});
-
-// Acordeón
-
-document.addEventListener("DOMContentLoaded", function() {
-  const accordionButtons = document.querySelectorAll(".accordion-button");
-
-  accordionButtons.forEach(button => {
-    button.addEventListener("click", function() {
-      const cardBody = button.closest(".card-body");
-      const cardText = cardBody.querySelector(".card-text");
-      const contentHeight = cardText.scrollHeight + "px";
-
-      if (cardText.style.opacity === "0") {
-        cardText.style.opacity = "1";
-        cardText.style.height = contentHeight;
-        cardText.style.transform = "translateY(0)";
-        cardText.style.transform =  "rotateX(0deg)";
-      } else {
-        cardText.style.opacity = "0";
-        cardText.style.height = "0";
-        cardText.style.transform = "translateY(-20px)";
-        cardText.style.transform = "rotateX(200deg)";
-      }
-    });
-  });
-});
-
-// Animación del logotipo
-
-setTimeout(function() {
-  document.getElementById("logotipo").style.opacity = "1";
-}, 1500);
-
-setTimeout(function() {
-  document.getElementById("logotipo").style.animationPlayState = "paused";
-}, 4800);
-
 
 // Reproducir video en pantalla completa
 
-$(document).ready(function() {
-    var playButton = $(".fullPlay");
-    var video = $(".videos");
+$(document).ready(function () {
 
-    function enterFullscreen() {
-        if (video[0].requestFullscreen) {
-            video[0].requestFullscreen();
-        } else if (video[0].webkitRequestFullscreen) {
-            video[0].webkitRequestFullscreen();
+    $(".fullPlay").on("click", function () {
+
+        // Contenedor del botón pulsado
+        const contenedor = $(this).closest(".v");
+
+        // Vídeo correspondiente
+        const video = contenedor.find(".videos")[0];
+
+        if (!video) return;
+
+        // Reproducir
+        video.play();
+
+        // Pantalla completa
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
         }
-    }
 
-    playButton.on("click", function() {
-      if (video[0].paused) {
-          video[0].play();
-          enterFullscreen();
-      } else {
-          video[0].pause();
-      }
-  });
+    });
+
 });
 
 });

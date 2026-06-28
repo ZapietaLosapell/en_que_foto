@@ -62,7 +62,6 @@
                     </ul>
                 </nav>   
             </div>
-            <span id="busca-play" class="d-none d-lg-block">Busca el play oculto</span>
             <div class="container-fluid">
                 <div class="video-tv-container">
                     <img id="video-tv" src="img/animacion_volatryx_WEB.gif" alt="Gif animado de Volatryx">
@@ -70,25 +69,7 @@
                         <h1>¿En qué foto?</h1>
                         <p class="hero-subtitle">Cada imagen es más de lo que muestra. Investiga historias a partir de fotografías y archivos. Participa en documentales construidos colectivamente.</p>
                     </div>
-                    <button onclick="openModal();" aria-label="Open" class="open"><p>Ver teaser...</p>
-                        <img src="img/play.png" alt="Play" class="pointer" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="¡Has encontrado el Teaser!">
-                    </button>
                 </div>
-                <dialog id="modal1" role="dialog" aria-labelledby="dialogTitle" class="special ">
-                    <div class="x">
-                        <h3 id="dialogTitle">Teaser</h3>
-                        <button type="button" onclick="closeModal();" aria-label="Close">X</button>
-                    </div>
-                    <div class="video-container ratio ratio-16x9">
-                        <video id="teaser" class="teaser" controls preload="auto" poster="img/poster-2.png" alt="Teaser Video">
-                            <source src="video/Spot.webm" type="video/webm" />
-                            <track src="captions/MyCaptions.es.vtt" kind="captions" srclang="es" label="Spanish" class="track-es">
-                            <track src="captions/MyCaptions.en.vtt" kind="captions" srclang="en" label="English captions" class="track-en">
-                            <p>Your browser does not support the video tag. Download <a href="video/Spot.webm">video/Spot.webm</a>.<br>
-                            Su navegador no soporta vídeo HTML5. Este es un <a href="video/Spot.webm">enlace al vídeo</a> alternativo.</p>
-                        </video>
-                    </div>
-                </dialog>
             </div>
             <div class="aviso">
                 <div class="fixed-1 aviso"></div>
@@ -333,8 +314,8 @@
                 <div class="coleccion-horizontal pe-5">
                     <div class="video-s d-block d-lg-flex align-items-end">
                             <div class="v position-relative" id="v1">
-                                <video id="video1" class="bg-video position-absolute w-100 h-100 top-0 start-0 videos" autoplay muted loop>
-                                    <!-- <source src="video/medu-a.mp4" type="video/mp4"> -->
+                                <video id="video1" class="bg-video position-absolute w-100 h-100 top-0 start-0 videos" muted>
+                                    <source src="video/Video_1.webm" type="video/webm">
                                     Your browser does not support the video tag.
                                 </video>
                                 <div class="v-2 d-flex justify-content-center align-items-center">
@@ -343,8 +324,8 @@
                                         <div class=" d-flex">
                                             <h3>01</h3>
                                             <div>
-                                                <h2>Origen</h2>
-                                                <h2><i>1:32 min</i></h2>
+                                                <h2>Caja</h2>
+                                                <h2><i>00:37 min</i></h2>
                                             </div>
                                         </div>   
                                     </div>
@@ -352,8 +333,8 @@
                                 </div>
                             </div>
                             <div class="v position-relative" id="v2">
-                                <video class="bg-video position-absolute w-100 h-100 top-0 start-0 videos" autoplay muted loop>
-                                    <!-- <source src="video/medu-b.mp4" type="video/mp4"> -->
+                                <video class="bg-video position-absolute w-100 h-100 top-0 start-0 videos" muted>
+                                    <source src="video/video_2.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <div class="v-2 d-flex justify-content-center align-items-center">
@@ -362,8 +343,8 @@
                                         <div class=" d-flex">
                                             <h3>02</h3>
                                             <div>
-                                                <h2>Propósito</h2>
-                                                <h2><i>1:02 min</i></h2>
+                                                <h2>Vista sobres</h2>
+                                                <h2><i>00:16 min</i></h2>
                                             </div>
                                         </div>   
                                     </div>
@@ -371,8 +352,8 @@
                                 </div>
                             </div>
                             <div class="v position-relative" id="v3">
-                                <video class="bg-video position-absolute w-100 h-100 top-0 start-0 videos" autoplay muted loop>
-                                    <!-- <source src="video/medu-c.mp4" type="video/mp4"> -->
+                                <video class="bg-video position-absolute w-100 h-100 top-0 start-0 videos"muted>
+                                    <source src="video/Video_3.webm" type="video/webm">
                                     Your browser does not support the video tag.
                                 </video>
                                 <div class="v-2 d-flex justify-content-center align-items-center">
@@ -381,8 +362,8 @@
                                         <div class=" d-flex">
                                             <h3>03</h3>
                                             <div>
-                                                <h2>Variaciones</h2>
-                                                <h2><i>1:52 min</i></h2>
+                                                <h2>Primeros sobres</h2>
+                                                <h2><i>00:37 min</i></h2>
                                             </div>
                                         </div>   
                                     </div>
